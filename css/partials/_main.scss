@@ -1,0 +1,25 @@
+main {
+
+    & #t-shirts,
+    #pants,
+    #hoodies,
+    #shoes {
+        & .card {
+            height: 280px;
+            width: 190px;
+            box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+
+            & img {
+                object-fit: cover;
+            }
+        }
+    }
+
+    & #carritoindex {
+        color: #10841e;
+        position: fixed;
+        right: 15px;
+        bottom: 5px;
+        font-size: 70px;
+    }
+}

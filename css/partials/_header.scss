@@ -1,0 +1,31 @@
+header {
+    & i {
+        color: #10841e;
+    }
+
+    & .welcome {
+        background-color: #10841e;
+
+        & ul {
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 200px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+            position: absolute;
+            width: 212px;
+
+            & h2 {
+                background-color: #10841e;
+            }
+        }
+
+        & .col-9 {
+            height: 23vh;
+            background-image: url(./../images/background.webp);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+
+            & h1 {
+                color: #10841e;
+            }
+        }
+    }
+}
