@@ -1,16 +1,20 @@
-#cart {
-    height: 80vh;
-    margin: 0px 230px 0px 230px;
+#mainCart {
+    background-color: #10841e;
+
+    #cart {
+        height: 80vh;
+        margin: 0px 230px 0px 230px;
 
 
-    & .masMinus {
-        & i {
-            color: #10841e;
-        }
+        & .masMinus {
+            & i {
+                color: #10841e;
+            }
 
-        & div {
-            width: 40px;
-            height: 30px;
+            & div {
+                width: 40px;
+                height: 30px;
+            }
         }
     }
 }

@@ -45,21 +45,26 @@ main #shoes .card img {
      object-fit: cover;
 }
 main #carritoindex {
-  color: #10841e;
   position: fixed;
-  right: 15px;
+  right: 152px;
   bottom: 5px;
   font-size: 70px;
 }
+main #carritoindex i {
+  color: #10841e;
+}
 
-#cart {
+#mainCart {
+  background-color: #10841e;
+}
+#mainCart #cart {
   height: 80vh;
   margin: 0px 230px 0px 230px;
 }
-#cart .masMinus i {
+#mainCart #cart .masMinus i {
   color: #10841e;
 }
-#cart .masMinus div {
+#mainCart #cart .masMinus div {
   width: 40px;
   height: 30px;
 }/*# sourceMappingURL=styles.css.map */

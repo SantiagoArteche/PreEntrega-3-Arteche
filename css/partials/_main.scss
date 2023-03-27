@@ -16,10 +16,13 @@ main {
     }
 
     & #carritoindex {
-        color: #10841e;
         position: fixed;
-        right: 15px;
+        right: 152px;
         bottom: 5px;
         font-size: 70px;
+
+        & i {
+            color: #10841e;
+        }
     }
 }
