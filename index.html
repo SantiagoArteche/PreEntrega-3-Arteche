@@ -2,67 +2,68 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>OffStore - MainPage</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+        integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
         integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="./css/styles.css" />
+
 </head>
 
 <body>
     <header>
-        <div class="text-center bg-dark text-light fs-5">Hasta 12 cuotas sin interés!</div>
+        <div class="text-center bg-dark text-light fs-5">
+            Hasta 12 cuotas sin interés!
+        </div>
         <div class="container p-3">
             <div class="row">
                 <div class="col-3 mt-1">
-                    <a href="./index.html" class="d-flex flex-row align-items-center text-decoration-none "><i
+                    <a href="./index.html" class="d-flex flex-row align-items-center text-decoration-none"><i
                             class="fa-solid fa-clover fs-1 me-2"></i>
                         <h1 class="text-center text-success">OffStore</h1>
                     </a>
                 </div>
-                <form class="d-flex col-8 " role="search">
+                <form class="d-flex col-8" role="search">
                     <input class="form-control rounded-0 border-2 border-dark w-100 p-2 shadow-none" type="search"
-                        placeholder="Search your product" aria-label="Search">
-                    <button class="btn bg-light border-2 border-start-0 border-dark rounded-0" type="submit"><i
-                            class="fa-solid fa-magnifying-glass fa-rotate-90 fa-lg"></i></button>
+                        placeholder="Search your product" aria-label="Search" />
+                    <button class="btn bg-light border-2 border-start-0 border-dark rounded-0" type="submit">
+                        <i class="fa-solid fa-magnifying-glass fa-rotate-90 fa-lg"></i>
+                    </button>
                 </form>
                 <a href="./cart.html" class="col-1 text-center align-self-center fs-1"><i
                         class="fa-sharp fa-solid fa-cart-shopping"></i></a>
             </div>
         </div>
-        <div class="welcome">
+        <div id="welcome">
             <div class="container mt-2">
                 <div class="row">
                     <div class="col-3">
                         <ul class="list-unstyled m-0 border-2 rounded-3 bg-light p-1 my-3">
                             <div class="p-1">
-                                <h2 class="rounded-1 p-1  fs-4 text-light">Products</h2>
+                                <h2 class="rounded-1 p-1 fs-4 text-light products catProd" id="all">Productos</h2>
                             </div>
                             <div class="border-bottom border-gray">
-                                <li class="border-1 ms-3  fs-6 p-2">T-Shirts
-                                </li>
+                                <li class="border-1 ms-3 fs-6 p-2 catProd" id="shirt">Remeras</li>
                             </div>
                             <div class="border-bottom border-gray">
-                                <li class="p-1 fs-6 ms-3 p-2">Pants
-                                </li>
+                                <li class="p-1 fs-6 ms-3 p-2 pants catProd " id="pant">Pantalones</li>
                             </div>
                             <div class="border-bottom border-gray">
-                                <li class="p-1 fs-6 ms-3 p-2">Hoodies
-                                </li>
+                                <li class="p-1 fs-6 ms-3 p-2 hoodies catProd" id="hoodie">Abrigos</li>
                             </div>
                             <div>
-                                <li class="p-1 fs-6 ms-3 p-2">Shoes
-                                </li>
+                                <li class="p-1 fs-6 ms-3 p-2 shoes catProd" id="shoes">Zapatillas</li>
                             </div>
                         </ul>
                     </div>
                     <div class="col-9 bg-light rounded-3 my-3 d-flex justify-content-center align-items-center">
-                        <h1>WELCOME TO MY CLOTHES STORE!</h1>
+                        <h1 class="text-uppercase">Bienvenido a mi tienda de ropa!</h1>
                     </div>
                 </div>
             </div>
@@ -71,34 +72,43 @@
 
     <main class="mt-3">
         <div class="container">
-            <div class="row mx-4">
-                <div id="tShirts" class="d-flex justify-content-between">
-                </div>
-                <div id="pants" class="d-flex justify-content-between">
-                </div>
-                <div id="hoodies" class="d-flex justify-content-between">
-                </div>
-                <div id="shoes" class="d-flex justify-content-between">
+            <div class="row">
+                <div id="products" class="d-flex justify-content-around justify-items-center flex-wrap row-cols-4">
                 </div>
             </div>
-            <div id="carritoindex">
-                <div class="btn-group dropup">
-                    <i type="button"
-                        class="btn btn-secondary dropdown-toggle fa-sharp bg-light fa-solid fa-cart-shopping col-1 text-center align-self-center border-3 border border-success"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                    </i>
-                    <ul class="dropdown-menu">
-                        <p class="text-center">Carrito vacio</p>
-                    </ul>
+            <!-- empieza cart -->
+            <div id="cartIndex">
+                <i class="fa-solid fa-cart-shopping fs-1 mainCart">
+                </i>
+                <div class="border-4 rounded-3 align-items-center text-light cartDisp disabled">
+                    <div class="d-flex flex-row border-bottom border-black p-2 pt-0 bg-success sticky-top">
+                        <div class="fs-6 col-9 align-self-center">Carrito</div>
+                        <div class="col-3 quitCart d-flex flex-row justify-content-between">
+                            <div class="fs-6 text-center emptyCart align-self-center ">Vaciar Carrito</div>
+                            <p class="fs-6 align-self-start text-end">X</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div
+                            class="text-center align-self-center mt-3 text-center animate__animated animate__flash animate__infinite infinite animate__slower carText">
+                            Carrito Vacio</div>
+                        <div class="p-2">
+                        </div>
+                    </div>
+                    <div class="fs-6 p-2 text-center bg-success border-top border-black sticky-bottom">Añadir
+                        Productos Al
+                        Carrito
+                    </div>
                 </div>
             </div>
         </div>
     </main>
 
     <footer class="p-3 mt-5 bg-dark">
-        <p class="text-center m-0 text-light">Copyright © - 2023 Santiago Arteche. All rights reserved.</p>
+        <p class="text-center m-0 text-light">
+            Copyright © - 2023 Santiago Arteche. All rights reserved.
+        </p>
     </footer>
-
     <script src="./js/index.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous">

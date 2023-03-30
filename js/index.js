@@ -1,56 +1,218 @@
-class Products {
-    constructor(id, title, img, category, price) {
-        this.id = id;
-        this.title = title;
-        this.img = img;
-        this.category = category;
-        this.price = price;
-    }
-}
-const shirtsContainer = document.querySelector("#tShirts");
-const tShirts = [];
-tShirts.push(new Products(1, "Nike Shirt", "./images/nike1.jpg", "shirt", `$${2500}`));
-tShirts.push(new Products(2, "Adidas Shirt", "./images/remeraadidas.jpg", "shirt", `$${3000}`));
-tShirts.push(new Products(3, "Puma Shirt", "./images/pumaw1.jpg", "shirt", `$${3500}`));
-tShirts.push(new Products(4, "Jordan Shirt", "./images/jordan1.jpg", "shirt", `$${4000}`));
+const product = [{
+    id: 1,
+    nombre: "Nike Shirt",
+    img: "./images/nike1.jpg",
+    tipo: "shirt",
+    categoria: {
+        nombre: "Shirt",
+        id: "shirt",
+    },
+    precio: 2500
+}, {
+    id: 2,
+    nombre: "Adidas Shirt",
+    img: "./images/remeraadidas.jpg",
+    tipo: "shirt",
+    categoria: {
+        nombre: "Shirt",
+        id: "shirt",
+    },
+    precio: 3000
+}, {
+    id: 3,
+    nombre: "Puma Shirt",
+    img: "./images/pumaw1.jpg",
+    tipo: "shirt",
+    categoria: {
+        nombre: "Shirt",
+        id: "shirt",
+    },
+    precio: 3500
+}, {
+    id: 4,
+    nombre: "Jordan Shirt",
+    img: "./images/jordan1.jpg",
+    tipo: "shirt",
+    categoria: {
+        nombre: "Shirt",
+        id: "shirt",
+    },
+    precio: 4000
+}, {
+    id: 5,
+    nombre: "Nike Pants",
+    img: "./images/pantnike.webp",
+    tipo: "pant",
+    categoria: {
+        nombre: "Pant",
+        id: "pant",
+    },
+    precio: 3200
+}, {
+    id: 6,
+    nombre: "Adidas Pants",
+    img: "./images/pantadidas.png",
+    tipo: "pant",
+    categoria: {
+        nombre: "Pant",
+        id: "pant",
+    },
+    precio: 3600
+}, {
+    id: 7,
+    nombre: "Puma Pants",
+    img: "./images/pantpuma.png",
+    tipo: "pant",
+    categoria: {
+        nombre: "Pant",
+        id: "pant",
+    },
+    precio: 4400
+}, {
+    id: 8,
+    nombre: "Jordan Pants",
+    img: "./images/pantsjordan.png",
+    tipo: "pant",
+    categoria: {
+        nombre: "Pant",
+        id: "pant",
+    },
+    precio: 5900
+}, {
+    id: 9,
+    nombre: "Nike Hoodie",
+    img: "./images/camperanike.jpg",
+    tipo: "hoodie",
+    categoria: {
+        nombre: "Hoodie",
+        id: "hoodie",
+    },
+    precio: 6000
+}, {
+    id: 10,
+    nombre: "Adidas Hoodie",
+    img: "./images/camperaadidas.jpg",
+    tipo: "hoodie",
+    categoria: {
+        nombre: "Hoodie",
+        id: "hoodie",
+    },
+    precio: 6500
+}, {
+    id: 11,
+    nombre: "Puma Hoodie",
+    img: "./images/camperapuma.jpg",
+    tipo: "hoodie",
+    categoria: {
+        nombre: "Hoodie",
+        id: "hoodie",
+    },
+    precio: 8200
+}, {
+    id: 12,
+    nombre: "Jordan Hoodie",
+    img: "./images/buzojordan.jpg",
+    tipo: "hoodie",
+    categoria: {
+        nombre: "Hoodie",
+        id: "hoodie",
+    },
+    precio: 9300
+}, {
+    id: 13,
+    nombre: "Nike Shoes",
+    img: "./images/nikeshoes2.png",
+    tipo: "shoes",
+    categoria: {
+        nombre: "Shoes",
+        id: "shoes",
+    },
+    precio: 6300
+}, {
+    id: 14,
+    nombre: "Adidas Shoes",
+    img: "./images/adidasshoes.png",
+    tipo: "shoes",
+    categoria: {
+        nombre: "Shoes",
+        id: "shoes",
+    },
+    precio: 8000
+}, {
+    id: 15,
+    nombre: "Puma Shoes",
+    img: "./images/pumashoes.png",
+    tipo: "shoes",
+    categoria: {
+        nombre: "Shoes",
+        id: "shoes",
+    },
+    precio: 5430
+}, {
+    id: 16,
+    nombre: "Jordan Shoes",
+    img: "./images/jordanshoes.png",
+    tipo: "shoes",
+    categoria: {
+        nombre: "Shoes",
+        id: "shoes",
+    },
+    precio: 12300
+}];
 
-const pantContainer = document.querySelector("#pants");
-const pants = [];
-pants.push(new Products(1, "Nike Pants", "./images/pantnike.webp", "pant", `$${3200}`));
-pants.push(new Products(2, "Adidas Pants", "./images/pantadidas.png", "pant", `$${3600}`));
-pants.push(new Products(3, "Puma Pants", "./images/pantpuma.png", "pant", `$${4400}`));
-pants.push(new Products(4, "Jordan Pants", "./images/pantsjordan.png", "pant", `$${5900}`));
+const productContainer = document.querySelector("#products")
+let productAdded = document.querySelectorAll(".containerProduct")
 
-const hoodiesContainer = document.querySelector("#hoodies");
-const hoodies = [];
-hoodies.push(new Products(1, "Nike Hoodie", "./images/camperanike.jpg", "hoodie", `$${6000}`));
-hoodies.push(new Products(2, "Adidas Hoodie", "./images/camperaadidas.jpg", "hoodie", `$${6500}`));
-hoodies.push(new Products(3, "Puma Hoodie", "./images/camperapuma.jpg", "hoodie", `$${8200}`));
-hoodies.push(new Products(4, "Jordan Hoodie", "./images/buzojordan.jpg", "hoodie", `$${9300}`));
-
-const shoesContainer = document.querySelector("#shoes");
-const shoes = [];
-shoes.push(new Products(1, "Nike Shoes", "./images/nikeshoes2.png", "shoes", `$${6300}`));
-shoes.push(new Products(2, "Adidas Shoes", "./images/adidasshoes.png", "shoes", `$${8000}`));
-shoes.push(new Products(3, "Puma Shoes", "./images/pumashoes.png", "shoes", `$${5430}`));
-shoes.push(new Products(4, "Jordan Shoes", "./images/jordanshoes.png", "shoes", `$${12300}`));
-
-function uploadProducts(array, container) {
-    array.forEach(product => {
+function uploadProducts(array) {
+    productContainer.innerHTML = ``
+    array.forEach(el => {
         const div = document.createElement("div");
+        div.classList.add("d-flex");
+        div.classList.add("justify-content-center");
         div.innerHTML = `<div id="t-shirts" class="row d-flex flex-row justify-content-between"><div
-        class="rounded-4 d-flex align-items-center justify-content-center card border-4 border-success mt-5 p-2">
-        <img src=${product.img} class="img-fluid">
-        <h3 class="text-uppercase fs-5 mt-1">${product.title}
-        </h3>
-        <h4 class="fs-5">${product.price}</h4>
-        <p class="px-3 mb-1 border-2 border border-dark fs-6 rounded-2">Add to cart</p>
-    </div>`;
+            class="rounded-4 d-flex align-items-center justify-content-center card border-4 border-success mt-5 p-2">
+            <img src=${el.img} class="img-fluid">
+            <h3 class="text-uppercase fs-5 mt-1">${el.nombre}
+            </h3>
+            <h4 class="fs-5">$${el.precio}</h4>
+            <p class="px-3 mb-1 border-2 border border-dark fs-6 rounded-2 containerProduct" id="${el.id}">Add to cart</p>
+            </div>`
+        productContainer.append(div)
+    })
+    uploadButtonsP();
+    console.log(productAdded);
+}
+uploadProducts(product);
 
-        container.append(div);
+const productsCategory = document.querySelectorAll(".catProd");
+
+
+productsCategory.forEach(button => {
+
+    button.addEventListener("click", e => {
+
+        if (e.currentTarget.id != "all") {
+            const productFilter = product.filter(el => el.categoria.id === e.currentTarget.id)
+            uploadProducts(productFilter);
+        } else {
+            uploadProducts(product);
+        }
+    })
+})
+
+function uploadButtonsP() {
+    productAdded = document.querySelectorAll(".containerProduct");
+
+    productAdded.forEach(el => {
+        el.addEventListener("click", addProductToCart)
     })
 }
-uploadProducts(tShirts, shirtsContainer);
-uploadProducts(pants, pantContainer);
-uploadProducts(hoodies, hoodiesContainer);
-uploadProducts(shoes, shoesContainer);
+
+
+const cart = []
+
+function addProductToCart(e) {
+    const addedProduct = product.find(el => JSON.stringify(el.id) === e.currentTarget.id);
+    cart.push(addedProduct);
+}
+console.log(cart);

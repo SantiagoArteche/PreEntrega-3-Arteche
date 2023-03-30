@@ -1,9 +1,7 @@
 main {
+    min-height: 375px;
 
-    & #t-shirts,
-    #pants,
-    #hoodies,
-    #shoes {
+    & #products {
         & .card {
             height: 280px;
             width: 190px;
@@ -12,17 +10,67 @@ main {
             & img {
                 object-fit: cover;
             }
+
+            & p {
+                background: #10841e;
+                color: white;
+                cursor: pointer;
+            }
         }
     }
 
-    & #carritoindex {
-        position: fixed;
-        right: 152px;
-        bottom: 5px;
-        font-size: 70px;
+    & #cartIndex {
 
-        & i {
+        & .masMinus {
+            width: 80px;
+            height: 30px;
+        }
+
+        & .mainCart {
             color: #10841e;
+            position: fixed;
+            right: 40px;
+            bottom: 5px;
+            font-size: 70px;
+            cursor: pointer;
+        }
+
+        & .disabled {
+            display: none;
+        }
+
+        & .cartDisp {
+            background-color: #10841e;
+            position: fixed;
+            right: 40px;
+            bottom: 2px;
+            max-height: 750px;
+            width: 550px;
+            overflow-y: scroll;
+
+
+            & .quitCart {
+
+                & p {
+                    width: 15%;
+                    cursor: pointer;
+                }
+
+                & div {
+                    cursor: pointer;
+                }
+            }
+
+            & .addProducts {
+                & img {
+                    height: 100px;
+                    width: 100px;
+                }
+            }
+
+
+
         }
     }
+
 }
