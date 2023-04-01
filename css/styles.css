@@ -70,9 +70,14 @@ main #cartIndex .cartDisp {
   position: fixed;
   right: 40px;
   bottom: 2px;
-  max-height: 750px;
   width: 550px;
-  overflow-y: scroll;
+  overflow: hidden;
+}
+main #cartIndex .cartDisp #bringPage .heigthAdd {
+  height: 300px;
+}
+main #cartIndex .cartDisp #bringPage #bringedPage {
+  height: 200px;
 }
 main #cartIndex .cartDisp .quitCart p {
   width: 15%;
@@ -80,10 +85,6 @@ main #cartIndex .cartDisp .quitCart p {
 }
 main #cartIndex .cartDisp .quitCart div {
   cursor: pointer;
-}
-main #cartIndex .cartDisp .addProducts img {
-  height: 100px;
-  width: 100px;
 }
 
 #mainCart {
@@ -98,4 +99,18 @@ main #cartIndex .cartDisp .addProducts img {
 #mainCart #cart .masMinus div {
   width: 40px;
   height: 30px;
+}
+
+#cartInsideIndex {
+  background-color: #10841e;
+}
+#cartInsideIndex .whereProductAdded {
+  overflow-x: hidden;
+}
+#cartInsideIndex .whereProductAdded img {
+  height: 100px;
+  width: 100px;
+}
+#cartInsideIndex .whereProductAdded .cantidad {
+  width: 30px;
 }/*# sourceMappingURL=styles.css.map */

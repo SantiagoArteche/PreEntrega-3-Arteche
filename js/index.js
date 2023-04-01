@@ -1,8 +1,9 @@
-const product = [{
+const producto = [{
     id: 1,
     nombre: "Nike Shirt",
     img: "./images/nike1.jpg",
     tipo: "shirt",
+    cantidad: 1,
     categoria: {
         nombre: "Shirt",
         id: "shirt",
@@ -13,6 +14,7 @@ const product = [{
     nombre: "Adidas Shirt",
     img: "./images/remeraadidas.jpg",
     tipo: "shirt",
+    cantidad: 1,
     categoria: {
         nombre: "Shirt",
         id: "shirt",
@@ -23,6 +25,7 @@ const product = [{
     nombre: "Puma Shirt",
     img: "./images/pumaw1.jpg",
     tipo: "shirt",
+    cantidad: 1,
     categoria: {
         nombre: "Shirt",
         id: "shirt",
@@ -33,6 +36,7 @@ const product = [{
     nombre: "Jordan Shirt",
     img: "./images/jordan1.jpg",
     tipo: "shirt",
+    cantidad: 1,
     categoria: {
         nombre: "Shirt",
         id: "shirt",
@@ -43,6 +47,7 @@ const product = [{
     nombre: "Nike Pants",
     img: "./images/pantnike.webp",
     tipo: "pant",
+    cantidad: 1,
     categoria: {
         nombre: "Pant",
         id: "pant",
@@ -53,6 +58,7 @@ const product = [{
     nombre: "Adidas Pants",
     img: "./images/pantadidas.png",
     tipo: "pant",
+    cantidad: 1,
     categoria: {
         nombre: "Pant",
         id: "pant",
@@ -63,6 +69,7 @@ const product = [{
     nombre: "Puma Pants",
     img: "./images/pantpuma.png",
     tipo: "pant",
+    cantidad: 1,
     categoria: {
         nombre: "Pant",
         id: "pant",
@@ -73,6 +80,7 @@ const product = [{
     nombre: "Jordan Pants",
     img: "./images/pantsjordan.png",
     tipo: "pant",
+    cantidad: 1,
     categoria: {
         nombre: "Pant",
         id: "pant",
@@ -83,6 +91,7 @@ const product = [{
     nombre: "Nike Hoodie",
     img: "./images/camperanike.jpg",
     tipo: "hoodie",
+    cantidad: 1,
     categoria: {
         nombre: "Hoodie",
         id: "hoodie",
@@ -93,6 +102,7 @@ const product = [{
     nombre: "Adidas Hoodie",
     img: "./images/camperaadidas.jpg",
     tipo: "hoodie",
+    cantidad: 1,
     categoria: {
         nombre: "Hoodie",
         id: "hoodie",
@@ -103,6 +113,7 @@ const product = [{
     nombre: "Puma Hoodie",
     img: "./images/camperapuma.jpg",
     tipo: "hoodie",
+    cantidad: 1,
     categoria: {
         nombre: "Hoodie",
         id: "hoodie",
@@ -113,6 +124,7 @@ const product = [{
     nombre: "Jordan Hoodie",
     img: "./images/buzojordan.jpg",
     tipo: "hoodie",
+    cantidad: 1,
     categoria: {
         nombre: "Hoodie",
         id: "hoodie",
@@ -123,6 +135,7 @@ const product = [{
     nombre: "Nike Shoes",
     img: "./images/nikeshoes2.png",
     tipo: "shoes",
+    cantidad: 1,
     categoria: {
         nombre: "Shoes",
         id: "shoes",
@@ -133,6 +146,7 @@ const product = [{
     nombre: "Adidas Shoes",
     img: "./images/adidasshoes.png",
     tipo: "shoes",
+    cantidad: 1,
     categoria: {
         nombre: "Shoes",
         id: "shoes",
@@ -143,6 +157,7 @@ const product = [{
     nombre: "Puma Shoes",
     img: "./images/pumashoes.png",
     tipo: "shoes",
+    cantidad: 1,
     categoria: {
         nombre: "Shoes",
         id: "shoes",
@@ -153,6 +168,7 @@ const product = [{
     nombre: "Jordan Shoes",
     img: "./images/jordanshoes.png",
     tipo: "shoes",
+    cantidad: 1,
     categoria: {
         nombre: "Shoes",
         id: "shoes",
@@ -160,59 +176,96 @@ const product = [{
     precio: 12300
 }];
 
-const productContainer = document.querySelector("#products")
-let productAdded = document.querySelectorAll(".containerProduct")
+const contenedorDeProductos = document.querySelector("#products")
+let productoAnadido = document.querySelectorAll(".add")
 
-function uploadProducts(array) {
-    productContainer.innerHTML = ``
+function cargarProductos(array) {
+    contenedorDeProductos.innerHTML = ``
     array.forEach(el => {
-        const div = document.createElement("div");
-        div.classList.add("d-flex");
-        div.classList.add("justify-content-center");
-        div.innerHTML = `<div id="t-shirts" class="row d-flex flex-row justify-content-between"><div
+        const li = document.createElement("li");
+        li.classList.add("d-flex");
+        li.classList.add("justify-content-center");
+        li.innerHTML = `<div class="row d-flex flex-row justify-content-between"><div
             class="rounded-4 d-flex align-items-center justify-content-center card border-4 border-success mt-5 p-2">
             <img src=${el.img} class="img-fluid">
             <h3 class="text-uppercase fs-5 mt-1">${el.nombre}
             </h3>
             <h4 class="fs-5">$${el.precio}</h4>
-            <p class="px-3 mb-1 border-2 border border-dark fs-6 rounded-2 containerProduct" id="${el.id}">Add to cart</p>
-            </div>`
-        productContainer.append(div)
+            <p class="px-3 mb-1 border-2 border border-dark fs-6 rounded-2 add" id="${el.id}">Add to cart</p>
+            </div></div>`
+        contenedorDeProductos.append(li)
     })
-    uploadButtonsP();
-    console.log(productAdded);
+    cargarProductosP();
 }
-uploadProducts(product);
+cargarProductos(producto);
 
-const productsCategory = document.querySelectorAll(".catProd");
+const categoriaDeProductos = document.querySelectorAll(".catProd");
 
-
-productsCategory.forEach(button => {
+categoriaDeProductos.forEach(button => {
 
     button.addEventListener("click", e => {
-
         if (e.currentTarget.id != "all") {
-            const productFilter = product.filter(el => el.categoria.id === e.currentTarget.id)
-            uploadProducts(productFilter);
+            const filtroDeProductos = producto.filter(el => el.categoria.id === e.currentTarget.id);
+            cargarProductos(filtroDeProductos);
         } else {
-            uploadProducts(product);
+            cargarProductos(producto);
         }
     })
 })
 
-function uploadButtonsP() {
-    productAdded = document.querySelectorAll(".containerProduct");
-
-    productAdded.forEach(el => {
-        el.addEventListener("click", addProductToCart)
+function cargarProductosP() {
+    productoAnadido = document.querySelectorAll(".add");
+    const emptyCart = document.querySelector(".carText")
+    productoAnadido.forEach(el => {
+        el.addEventListener("click", anadirProductoAlCarrito);
+        el.addEventListener("click", bringCartIndex)
+        el.addEventListener("click", disableEmptyCart)
     })
+
+    function bringCartIndex() {
+        const bringPage = document.querySelector("#bringPage");
+        bringPage.innerHTML = `<iframe src="./indexcart.html" frameborder="0" class="w-100" id="bringedPage"></iframe>`
+    }
+
+    function disableEmptyCart() {
+        emptyCart.classList.add("disabled")
+    }
+}
+
+const carrito = [];
+
+
+let precioo = document.querySelector(".precio");
+
+const dondeEsAnadidoElProducto = document.querySelector(".whereProductAdded");
+
+function anadirProductoAlCarrito(e) {
+    productoAnadido = producto.find(el => JSON.stringify(el.id) === e.currentTarget.id);
+    if (carrito.some(producto => JSON.stringify(producto.id) === e.currentTarget.id)) {
+        const index = carrito.findIndex(producto => JSON.stringify(producto.id) === e.currentTarget.id)
+        carrito[index].cantidad++;
+    } else {
+        productoAnadido.cantidad = 1;
+        carrito.push(productoAnadido);
+    }
+    localStorage.setItem("prodEnCartIndex", JSON.stringify(carrito))
+}
+
+const cartI = document.querySelector(".mainCart")
+const cartDisplay = document.querySelector(".cartDisp")
+cartI.addEventListener("click", active);
+
+function active() {
+    cartDisplay.classList.remove("disabled");
+    cartI.classList.add("disabled");
 }
 
 
-const cart = []
 
-function addProductToCart(e) {
-    const addedProduct = product.find(el => JSON.stringify(el.id) === e.currentTarget.id);
-    cart.push(addedProduct);
+const deshabilitarCarrito = document.querySelector(".disableCart");
+deshabilitarCarrito.addEventListener("click", deshabilitar);
+
+function deshabilitar() {
+    cartDisplay.classList.add("disabled");
+    cartI.classList.remove("disabled");
 }
-console.log(cart);

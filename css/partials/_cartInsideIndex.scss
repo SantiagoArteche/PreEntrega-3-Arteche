@@ -1,0 +1,16 @@
+#cartInsideIndex {
+    background-color: #10841e;
+
+    & .whereProductAdded {
+        overflow-x: hidden;
+
+        & img {
+            height: 100px;
+            width: 100px;
+        }
+
+        & .cantidad {
+            width: 30px;
+        }
+    }
+}

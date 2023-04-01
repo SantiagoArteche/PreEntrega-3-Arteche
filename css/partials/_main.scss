@@ -44,10 +44,21 @@ main {
             position: fixed;
             right: 40px;
             bottom: 2px;
-            max-height: 750px;
             width: 550px;
-            overflow-y: scroll;
+            overflow: hidden;
 
+
+            & #bringPage {
+
+                & .heigthAdd {
+                    height: 300px;
+                }
+
+                & #bringedPage {
+                    height: 200px;
+
+                }
+            }
 
             & .quitCart {
 
@@ -60,15 +71,6 @@ main {
                     cursor: pointer;
                 }
             }
-
-            & .addProducts {
-                & img {
-                    height: 100px;
-                    width: 100px;
-                }
-            }
-
-
 
         }
     }
