@@ -45,20 +45,35 @@ main {
             right: 40px;
             bottom: 2px;
             width: 550px;
-            overflow: hidden;
+            overflow-x: hidden;
+            overflow-y: scroll;
+            max-height: 425px;
 
 
-            & #bringPage {
+            & .whereProductAdded {
 
-                & .heigthAdd {
-                    height: 300px;
+                & img {
+
+                    height: 100px;
+                    width: 100px;
                 }
 
-                & #bringedPage {
-                    height: 200px;
+                & .cantidad {
+                    width: 30px;
+                }
 
+                & i {
+                    color: white;
+
+                }
+
+                & .botonesEliminar {
+                    cursor: pointer;
+                    width: 20px;
                 }
             }
+
+
 
             & .quitCart {
 
@@ -70,6 +85,14 @@ main {
                 & div {
                     cursor: pointer;
                 }
+            }
+
+            & .sticky-top {
+                height: 45px;
+            }
+
+            & .sticky-bottom {
+                height: 45px;
             }
 
         }

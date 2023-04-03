@@ -215,29 +215,21 @@ categoriaDeProductos.forEach(button => {
 
 function cargarProductosP() {
     productoAnadido = document.querySelectorAll(".add");
-    const emptyCart = document.querySelector(".carText")
+
     productoAnadido.forEach(el => {
         el.addEventListener("click", anadirProductoAlCarrito);
-        el.addEventListener("click", bringCartIndex)
-        el.addEventListener("click", disableEmptyCart)
     })
-
-    function bringCartIndex() {
-        const bringPage = document.querySelector("#bringPage");
-        bringPage.innerHTML = `<iframe src="./indexcart.html" frameborder="0" class="w-100" id="bringedPage"></iframe>`
-    }
-
-    function disableEmptyCart() {
-        emptyCart.classList.add("disabled")
-    }
 }
 
-const carrito = [];
-
-
-let precioo = document.querySelector(".precio");
-
+let carrito = []
+let carritoLocalStorage = localStorage.getItem("carritoConProdsAnadidos");
+if (carritoLocalStorage) {
+    carrito = JSON.parse(carritoLocalStorage);
+} else {
+    carrito = []
+}
 const dondeEsAnadidoElProducto = document.querySelector(".whereProductAdded");
+const cart = document.querySelector(".cartDisp");
 
 function anadirProductoAlCarrito(e) {
     productoAnadido = producto.find(el => JSON.stringify(el.id) === e.currentTarget.id);
@@ -248,8 +240,64 @@ function anadirProductoAlCarrito(e) {
         productoAnadido.cantidad = 1;
         carrito.push(productoAnadido);
     }
-    localStorage.setItem("prodEnCartIndex", JSON.stringify(carrito))
+    productosAnadidos();
 }
+
+function productosAnadidos() {
+    if (carrito.length > 0 && carrito) {
+        dondeEsAnadidoElProducto.innerHTML = ``
+        carrito.forEach(el => {
+            const div = document.createElement("div");
+            div.classList.add("mx-2")
+            div.innerHTML = `<div class="row d-flex flex-row justify-content-between px-2"><div
+        class="rounded-4 d-flex align-items-center justify-content-between border-4 border-success mt-2 p-1">
+        <img src=${el.img} class="img-fluid col-2">
+        <h3 class="text-uppercase fs-6 mt-1 text-light col-5 text-center">${el.nombre}
+        </h3>
+        <div class="bg-light border text-dark border-black cantidad text-center col-2">${el.cantidad}</div>   
+        <h4 class="fs-6 precio text-light col-1 text-end mt-1 ms-3">$${el.precio * el.cantidad}</h4><i class="fa-sharp fa-solid fa-trash botonesEliminar col-1 text-center" id="${el.id}"></i>
+        </div></div>`
+            dondeEsAnadidoElProducto.append(div);
+            dondeEsAnadidoElProducto.classList.remove("disabled");
+            carritoVacio.classList.add("disabled");
+            actualizarPrecio();
+        })
+    } else {
+        dondeEsAnadidoElProducto.classList.add("disabled");
+        total.innerText = `Añadir Productos Al Carrito`;
+        carritoVacio.classList.remove("disabled");
+    }
+    localStorage.setItem("carritoConProdsAnadidos", JSON.stringify(carrito));
+    borrarBotonesIndividuales();
+
+    function borrarBotonesIndividuales() {
+        localStorage.getItem("carritoConProdsAnadidos");
+        const botones = document.querySelectorAll(".botonesEliminar");
+        botones.forEach(el => {
+            el.addEventListener("click", eliminarBotones)
+        })
+    }
+
+    function eliminarBotones(e) {
+        const eliminar = carrito.findIndex(el => JSON.stringify(el.id) === e.currentTarget.id)
+        console.log(eliminar);
+        carrito.splice(eliminar, 1)
+        productosAnadidos();
+
+    }
+}
+
+const vaciarCarrito = document.querySelector(".emptyCart")
+vaciarCarrito.addEventListener("click", vaciar)
+
+const carritoVacio = document.querySelector(".carText");
+
+function disableEmptyCart() {
+    carritoVacio.classList.add("disabled")
+}
+
+
+
 
 const cartI = document.querySelector(".mainCart")
 const cartDisplay = document.querySelector(".cartDisp")
@@ -258,9 +306,9 @@ cartI.addEventListener("click", active);
 function active() {
     cartDisplay.classList.remove("disabled");
     cartI.classList.add("disabled");
+    dondeEsAnadidoElProducto.classList.remove("disabled");
+    productosAnadidos();
 }
-
-
 
 const deshabilitarCarrito = document.querySelector(".disableCart");
 deshabilitarCarrito.addEventListener("click", deshabilitar);
@@ -268,4 +316,19 @@ deshabilitarCarrito.addEventListener("click", deshabilitar);
 function deshabilitar() {
     cartDisplay.classList.add("disabled");
     cartI.classList.remove("disabled");
+}
+
+const total = document.querySelector(".totalPrice")
+
+
+function actualizarPrecio() {
+    total.innerText = `Pasar A Finalizar Compra $${carrito.reduce((acum, prod) => acum + prod.precio * prod.cantidad, 0)}`
+}
+
+function vaciar() {
+    total.innerText = `Añadir Productos Al Carrito`
+    dondeEsAnadidoElProducto.innerHTML = ``
+    carritoVacio.classList.remove("disabled");
+    carrito.length = 0;
+    localStorage.setItem("carritoConProdsAnadidos", JSON.stringify(carrito));
 }

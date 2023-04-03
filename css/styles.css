@@ -71,13 +71,23 @@ main #cartIndex .cartDisp {
   right: 40px;
   bottom: 2px;
   width: 550px;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  max-height: 425px;
 }
-main #cartIndex .cartDisp #bringPage .heigthAdd {
-  height: 300px;
+main #cartIndex .cartDisp .whereProductAdded img {
+  height: 100px;
+  width: 100px;
 }
-main #cartIndex .cartDisp #bringPage #bringedPage {
-  height: 200px;
+main #cartIndex .cartDisp .whereProductAdded .cantidad {
+  width: 30px;
+}
+main #cartIndex .cartDisp .whereProductAdded i {
+  color: white;
+}
+main #cartIndex .cartDisp .whereProductAdded .botonesEliminar {
+  cursor: pointer;
+  width: 20px;
 }
 main #cartIndex .cartDisp .quitCart p {
   width: 15%;
@@ -86,31 +96,16 @@ main #cartIndex .cartDisp .quitCart p {
 main #cartIndex .cartDisp .quitCart div {
   cursor: pointer;
 }
+main #cartIndex .cartDisp .sticky-top {
+  height: 45px;
+}
+main #cartIndex .cartDisp .sticky-bottom {
+  height: 45px;
+}
 
 #mainCart {
   background-color: #10841e;
 }
 #mainCart #cart {
   margin: 0px 230px 0px 230px;
-}
-#mainCart #cart .masMinus i {
-  color: #10841e;
-}
-#mainCart #cart .masMinus div {
-  width: 40px;
-  height: 30px;
-}
-
-#cartInsideIndex {
-  background-color: #10841e;
-}
-#cartInsideIndex .whereProductAdded {
-  overflow-x: hidden;
-}
-#cartInsideIndex .whereProductAdded img {
-  height: 100px;
-  width: 100px;
-}
-#cartInsideIndex .whereProductAdded .cantidad {
-  width: 30px;
 }/*# sourceMappingURL=styles.css.map */
