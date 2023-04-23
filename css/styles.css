@@ -105,7 +105,25 @@ main #cartIndex .cartDisp .sticky-bottom {
 
 #mainCart {
   background-color: #10841e;
+  min-height: 80vh;
 }
 #mainCart #cart {
   margin: 0px 230px 0px 230px;
+}
+#mainCart #cart .disabled {
+  display: none !important;
+}
+#mainCart #cart p {
+  min-height: 450px;
+}
+#mainCart #cart .delete {
+  cursor: pointer;
+}
+#mainCart #cart img {
+  height: 180px;
+  width: 170px;
+}
+#mainCart #cart i {
+  font-size: 30px;
+  cursor: pointer;
 }/*# sourceMappingURL=styles.css.map */

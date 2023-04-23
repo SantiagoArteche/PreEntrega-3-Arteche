@@ -1,7 +1,32 @@
 #mainCart {
     background-color: #10841e;
+    min-height: 80vh;
 
-    #cart {
+    & #cart {
         margin: 0px 230px 0px 230px;
+
+        & .disabled {
+            display: none !important;
+        }
+
+        & p {
+            min-height: 450px;
+
+        }
+
+        & .delete {
+            cursor: pointer;
+        }
+
+        & img {
+            height: 180px;
+            width: 170px;
+        }
+
+        & i {
+
+            font-size: 30px;
+            cursor: pointer;
+        }
     }
 }
