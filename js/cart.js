@@ -1,9 +1,9 @@
-let cart = []
-let cartO = (localStorage.getItem("carritoConProdsAnadidos"))
 const carritoVacioP = document.querySelector(".carritoVacio")
 const containerProd = document.querySelector(".containerProd")
 const precioFinal = document.querySelector(".pFinal")
 
+let cart = []
+let cartO = (localStorage.getItem("carritoConProdsAnadidos"))
 if (cartO) {
     cart = JSON.parse(cartO)
 } else {
@@ -11,7 +11,8 @@ if (cartO) {
 }
 
 function cartJs() {
-    if (cart.length > 0) {
+    if (cart.length > 0 && cart) {
+        containerProd.innerHTML = ``
         cart.forEach((el) => {
             carritoVacioP.classList.add("disabled")
             const li = document.createElement("li")
@@ -28,22 +29,27 @@ function cartJs() {
             precioFinal.innerHTML = `Precio final: $${cart.reduce((acum, prod) => acum + prod.precio * prod.cantidad, 0)}`
         })
     } else {
+        carritoVacioP.classList.remove("disabled")
+    }
+    localStorage.setItem("carritoConProdsAnadidos", JSON.stringify(cart))
+    borrarProductos()
 
+    function borrarProductos() {
+        localStorage.getItem("carritoConProdsAnadidos")
+        console.log(cart.length);
+        const botonesEliminar = document.querySelectorAll(".botonesEliminar")
+        botonesEliminar.forEach(el => el.addEventListener("click", (e) => {
+            containerProd.innerHTML = ``
+            const eliminar = cart.findIndex(el => JSON.stringify(el.id) === e.currentTarget.id)
+            cart.splice(eliminar, 1)
+            precioFinal.innerHTML = `Precio final: $${cart.reduce((acum, prod) => acum + prod.precio * prod.cantidad, 0)}`
+            cartJs()
+        }))
     }
 }
 cartJs()
-console.log(cart);
+
 const emptyCart = document.querySelector(".delete")
-const botonesEliminar = document.querySelectorAll(".botonesEliminar")
-
-botonesEliminar.forEach(el => el.addEventListener("click", (e) => {
-    const eliminar = cart.findIndex(el => JSON.stringify(el.id) === e.currentTarget.id)
-    cart.splice(eliminar, 1)
-
-    cartJs()
-    localStorage.setItem("cart", JSON.stringify(cart))
-
-}))
 
 emptyCart.addEventListener("click", () => {
     localStorage.clear()
@@ -88,7 +94,6 @@ buyButton.addEventListener("click", () => {
                         cart.length = 0
                     }
                 })
-
         }
     })
 })
