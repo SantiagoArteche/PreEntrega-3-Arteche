@@ -3,7 +3,6 @@
     "nombre": "Remera Nike",
     "img": "./images/nike1.jpg",
     "tipo": "shirt",
-    "cantidad": 1,
     "categoria": {
         "nombre": "Shirt",
         "id": "shirt"
@@ -14,7 +13,6 @@
     "nombre": "Remera Adidas",
     "img": "./images/remeraadidas.jpg",
     "tipo": "shirt",
-    "cantidad": 1,
     "categoria": {
         "nombre": "Shirt",
         "id": "shirt"
@@ -25,7 +23,6 @@
     "nombre": "Remera Puma",
     "img": "./images/pumaw1.jpg",
     "tipo": "shirt",
-    "cantidad": 1,
     "categoria": {
         "nombre": "Shirt",
         "id": "shirt"
@@ -36,7 +33,6 @@
     "nombre": "Remera Jordan",
     "img": "./images/jordan1.jpg",
     "tipo": "shirt",
-    "cantidad": 1,
     "categoria": {
         "nombre": "Shirt",
         "id": "shirt"
@@ -47,7 +43,6 @@
     "nombre": "Pantalon Nike",
     "img": "./images/pantnike.webp",
     "tipo": "pant",
-    "cantidad": 1,
     "categoria": {
         "nombre": "Pant",
         "id": "pant"
@@ -58,7 +53,6 @@
     "nombre": "Pantalon Adidas",
     "img": "./images/pantadidas.png",
     "tipo": "pant",
-    "cantidad": 1,
     "categoria": {
         "nombre": "Pant",
         "id": "pant"
@@ -69,7 +63,6 @@
     "nombre": "Pantalon Puma",
     "img": "./images/pantpuma.png",
     "tipo": "pant",
-    "cantidad": 1,
     "categoria": {
         "nombre": "Pant",
         "id": "pant"
@@ -80,7 +73,6 @@
     "nombre": "Pantalon Jordan",
     "img": "./images/pantsjordan.png",
     "tipo": "pant",
-    "cantidad": 1,
     "categoria": {
         "nombre": "Pant",
         "id": "pant"
@@ -91,7 +83,6 @@
     "nombre": "Buzo Nike",
     "img": "./images/camperanike.jpg",
     "tipo": "hoodie",
-    "cantidad": 1,
     "categoria": {
         "nombre": "Hoodie",
         "id": "hoodie"
@@ -102,7 +93,6 @@
     "nombre": "Buzo Adidas",
     "img": "./images/camperaadidas.jpg",
     "tipo": "hoodie",
-    "cantidad": 1,
     "categoria": {
         "nombre": "Hoodie",
         "id": "hoodie"
@@ -113,7 +103,6 @@
     "nombre": "Buzo Puma",
     "img": "./images/camperapuma.jpg",
     "tipo": "hoodie",
-    "cantidad": 1,
     "categoria": {
         "nombre": "Hoodie",
         "id": "hoodie"
@@ -124,7 +113,6 @@
     "nombre": "Buzo Jordan",
     "img": "./images/buzojordan.jpg",
     "tipo": "hoodie",
-    "cantidad": 1,
     "categoria": {
         "nombre": "Hoodie",
         "id": "hoodie"
@@ -135,7 +123,6 @@
     "nombre": "Zapatillas Nike",
     "img": "./images/nikeshoes2.png",
     "tipo": "shoes",
-    "cantidad": 1,
     "categoria": {
         "nombre": "Shoes",
         "id": "shoes"
@@ -146,7 +133,6 @@
     "nombre": "Zapatillas Adidas",
     "img": "./images/adidasshoes.png",
     "tipo": "shoes",
-    "cantidad": 1,
     "categoria": {
         "nombre": "Shoes",
         "id": "shoes"
@@ -157,7 +143,6 @@
     "nombre": "Zapatillas Puma",
     "img": "./images/pumashoes.png",
     "tipo": "shoes",
-    "cantidad": 1,
     "categoria": {
         "nombre": "Shoes",
         "id": "shoes"
@@ -168,7 +153,6 @@
     "nombre": "Zapatillas Jordan",
     "img": "./images/jordanshoes.png",
     "tipo": "shoes",
-    "cantidad": 1,
     "categoria": {
         "nombre": "Shoes",
         "id": "shoes"

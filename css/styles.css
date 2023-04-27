@@ -124,6 +124,7 @@ main #cartIndex .cartDisp .sticky-bottom {
   width: 170px;
 }
 #mainCart #cart i {
+  width: 25px;
   font-size: 30px;
   cursor: pointer;
 }/*# sourceMappingURL=styles.css.map */
