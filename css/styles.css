@@ -105,7 +105,7 @@ main #cartIndex .cartDisp .sticky-bottom {
 
 #mainCart {
   background-color: #10841e;
-  min-height: 80vh;
+  min-height: 84vh;
 }
 #mainCart #cart {
   margin: 0px 230px 0px 230px;
